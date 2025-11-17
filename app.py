@@ -74,13 +74,19 @@ st.subheader("📈 Fleet Analytics")
 col_left, col_right = st.columns(2)
 
 with col_left:
-    # Days Since Service by Vehicle (Enhanced Bar Chart)
+    # Get a balanced sample across all risk levels
+    high_risk_sample = df[df["risk_level"] == "High"].nlargest(10, "days_since_service")
+    medium_risk_sample = df[df["risk_level"] == "Medium"].nlargest(5, "days_since_service")
+    low_risk_sample = df[df["risk_level"] == "Low"].nlargest(5, "days_since_service")
+    
+    mixed_sample = pd.concat([high_risk_sample, medium_risk_sample, low_risk_sample])
+    
     fig1 = px.bar(
-        df.sort_values("days_since_service", ascending=False).head(20),
+        mixed_sample.sort_values("days_since_service", ascending=False),
         x="vehicle_id",
         y="days_since_service",
         color="risk_level",
-        title="Top 20 Vehicles - Days Since Last Service",
+        title="Top Vehicles by Risk Level - Days Since Last Service",
         color_discrete_map={"High": "#FF4B4B", "Medium": "#FFA500", "Low": "#00CC66"},
         labels={"days_since_service": "Days", "vehicle_id": "Vehicle ID"}
     )
