@@ -28,4 +28,4 @@ df = pd.DataFrame(records, columns=[
 ])
 
 df.to_csv("./data/fleet_data_large.csv", index=False)
-print("✅ Generated", len(df), "records in ./data/fleet_data_large.csv")
+print("Generated", len(df), "records in ./data/fleet_data_large.csv")

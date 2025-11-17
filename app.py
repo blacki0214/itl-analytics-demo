@@ -5,7 +5,7 @@ from datetime import datetime
 
 st.set_page_config(page_title="ITL Logistics Analytics", layout="wide")
 
-st.title("🚚 ITL Predictive Fleet Maintenance Demo")
+st.title("ITL Predictive Fleet Maintenance Demo")
 st.write("This demo shows how ITL's analytics consultancy can ingest fleet data, clean it, score maintenance risk, and visualize it for the client.")
 
 # 1. Load data

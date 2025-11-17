@@ -41,7 +41,7 @@ jobs:
       - name: Simulate Deployment
         run: |
           echo "CI passed successfully."
-          echo "🚀 Simulating deployment of Streamlit app to ITL Cloud..."
+          echo "Simulating deployment of Streamlit app to ITL Cloud..."
           echo "Packaging Docker image..."
           echo "Deploying container to staging environment..."
           echo "Deployment complete! Application live at http://itl-demo-cloud:8501"
