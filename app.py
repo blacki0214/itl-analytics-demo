@@ -233,4 +233,4 @@ st.download_button(
 
 # Footer
 st.divider()
-st.markdown("**ITL Logistics Analytics** | Powered by Advanced Predictive Maintenance AI")
+st.markdown("**ITL Logistics Analytics** | Powered by Advanced Predictive Maintenance")
